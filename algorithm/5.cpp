@@ -4,7 +4,7 @@
 //
 #include <vector>
 using namespace std;
-//解1,部分测试样例未通过
+//解1,遍历累乘，效率偏低。
 class Solution {
 public:
     vector<int> statisticalResult(vector<int>& arrayA) {
