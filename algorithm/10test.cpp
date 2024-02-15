@@ -1,5 +1,5 @@
 /*
-9.cpp测试程序
+10.cpp测试程序
 最后修订时间：2024/2/15
 作者:Wanhe
 */
@@ -8,7 +8,7 @@
 const int FLAG=2147483647;
 
 template <typename T>
-void mergeSort(T *p1,T *p2 ,T *p3)
+void merge(T *p1,T *p2 ,T *p3)
 {
     T *arr1 = new T;
     T *arr2 = new T;
@@ -52,7 +52,7 @@ int main()
         cout<<i<<"\t";
     cout<<endl;
 
-    mergeSort(&array[0],&array[4],&array[9]);  
+    merge(&array[0],&array[4],&array[9]);  
     cout<<"New array:"<<endl;
     for(int i:array)
         cout<<i<<"\t";    
