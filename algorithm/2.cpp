@@ -1,6 +1,7 @@
 /*
 复制含有指向链表随机位置的指针
 题目来源：Leetcode
+最后修订日期:2024/2/15
 */
 #define NULL nullptr
 class Node {

@@ -1,5 +1,7 @@
 /*
 寻找数组内存在相同相同值的任意值
+题目来源：LeetCode
+最后修订日期:2024/2/15
 */
 #include <vector>
 using namespace std;
