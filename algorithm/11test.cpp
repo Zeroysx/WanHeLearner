@@ -1,13 +1,10 @@
 /*
-归并排序算法
-最后修订时间:2024/2/16
+11.cpp测试程序
+最后修订时间：2024/2/16
 作者:Wanhe
-Tips:分治思想典型案例
-此算法需要用到10.cpp中的算法
 */
-//结尾标识常量,取极大值
+#include <iostream>
 const int FLAG=2147483647;
-//归并算法
 template <typename T>
 void merge(T *p1,T *p2 ,T *p3)
 {
@@ -35,14 +32,7 @@ void merge(T *p1,T *p2 ,T *p3)
         }
     } 
 }
-/**
- * @brief 归并排序算法，将同一数组[p...r]范围内的数进行排序
- * @return void
- * @tparam T 
- * @param p 排序开始位置指针
- * @param r 排序结束位置指针
- * @note 本函数采用分治思想，将数组拆分并用归并算法进行排序。
- */
+
 template <typename T>
 void mergeSort(T*  p,T* r)
 {
@@ -53,4 +43,27 @@ void mergeSort(T*  p,T* r)
         mergeSort(q + 1, r);
         merge(p,q,r);
     }
+}
+
+using std::cout;
+using std::cin;
+using std::endl;
+
+int main()
+{
+    cout<<"Input your example(10 int words)."<<endl;
+    int array[10];
+    //输入样例
+    for(int i = 0;i < 10;i++)
+        cin>>array[i];
+    //输出原例
+    cout<<"Your example:"<<endl;
+     for(int i:array)
+        cout<<i<<"\t";
+    cout<<endl;
+
+    mergeSort(&array[0],&array[9]);  
+    cout<<"New array:"<<endl;
+    for(int i:array)
+        cout<<i<<"\t";    
 }
