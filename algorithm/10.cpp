@@ -1,6 +1,6 @@
 /*
 归并算法
-最后修订时间:2024/2/15
+最后修订时间:2024/2/18
 作者:Wanhe
 */
 //结尾标识常量,取极大值
@@ -40,4 +40,42 @@ void merge(T *p1,T *p2 ,T *p3)
             j++;
         }
     } 
+}
+
+//方法二:
+/**
+ * @brief 参数为数组下标的归并法
+ * 
+ * @tparam T 
+ * @param array 要排序的数组
+ * @param p 排序部分开始位置下标
+ * @param t 排序部分中间下标
+ * @param r 排序部分结尾下标
+ */
+template <typename T>
+void merge2(T array,int p ,int t  ,int r)
+{
+    T arr1[t - p + 2];
+    T arr2[r - t + 1];
+    //复制数组
+    for(int i = 0;i <t - p + 1;i++)
+        arr1[i] = array[p+i];
+    arr1[t - p + 1] =FLAG;
+    for(int i = 0;i < r - t;i++)
+        arr2[i] = array[t + 1 + i];
+    arr2[r - t] = FLAG;
+    for(int i = 0,j = 0;i + j <r - p + 1;)
+    {
+        if(arr1[i] <= arr2[j])
+        {
+            array[i+j] =arr1[i];
+            i++;
+        }
+        else 
+        {
+            array[i+j] = arr2[j];
+            j++;
+        }
+
+    }
 }
