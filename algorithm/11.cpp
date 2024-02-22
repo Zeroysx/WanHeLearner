@@ -1,6 +1,6 @@
 /*
 归并排序算法
-最后修订时间:2024/2/16
+最后修订时间:2024/2/22
 作者:Wanhe
 Tips:分治思想典型案例
 此算法需要用到10.cpp中的算法
@@ -35,6 +35,34 @@ void merge(T *p1,T *p2 ,T *p3)
         }
     } 
 }
+// 归并方法二：
+template <typename T>
+void merge2(T array,int p ,int t  ,int r)
+{
+    T arr1[t - p + 2];
+    T arr2[r - t + 1];
+    //复制数组
+    for(int i = 0;i <t - p + 1;i++)
+        arr1[i] = array[p+i];
+    arr1[t - p + 1] =FLAG;
+    for(int i = 0;i < r - t;i++)
+        arr2[i] = array[t + 1 + i];
+    arr2[r - t] = FLAG;
+    for(int i = 0,j = 0;i + j <r - p + 1;)
+    {
+        if(arr1[i] <= arr2[j])
+        {
+            array[i+j] =arr1[i];
+            i++;
+        }
+        else 
+        {
+            array[i+j] = arr2[j];
+            j++;
+        }
+
+    }
+}
 /**
  * @brief 归并排序算法，将同一数组[p...r]范围内的数进行排序
  * @return void
@@ -54,3 +82,16 @@ void mergeSort(T*  p,T* r)
         merge(p,q,r);
     }
 }
+//归并排序方法2
+template <typename T>
+void mergeSort2(T* p,T* r)
+{
+     if(p < r)
+    {
+        T* q = p + (r - p) / 2;
+        mergeSort2(p,q);
+        mergeSort2(q + 1, r);
+        merge2(p,q,r);
+    }
+}
+//

@@ -34,7 +34,7 @@ void merge(T *p1,T *p2 ,T *p3)
         }
     } 
 }
-
+//方法2
 template <typename T>
 void merge2(T array[],int p ,int t  ,int r)
 {
