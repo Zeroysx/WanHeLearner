@@ -1,8 +1,8 @@
 /*
 二分查找算法
-最后修订时间2024/2/22
+最后修订时间2024/2/26
 作者：Wanhe
-
+未完成
 */
 
 template <typename T>
@@ -25,6 +25,7 @@ Array(T value[]);
  */
 int binarySearch(T target);
 
+bool setValue(T value,int n);
 };
 
 //函数定义
@@ -36,11 +37,13 @@ Array<T>::Array(T value[])
     *val = new T[length];
     
 }
+
 template <typename T>
 Array<T>::~Array()
 {
     delete val[];
 }
+
 template <typename T>
 int Array<T>::binarySearch(T target)
 {
@@ -60,4 +63,13 @@ int Array<T>::binarySearch(T target)
     }
     return -1;
     
+}
+
+template <typename T>
+bool Array<T>::setValue(T value , int n)
+{
+    if(n < this->length && n > 0)
+    this->val[n] = value;
+    else return false;
+    return true;
 }
