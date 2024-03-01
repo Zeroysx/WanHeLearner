@@ -42,8 +42,9 @@ Array<T>::Array(T value[],int leth)
 template <typename T>
 Array<T>::~Array()
 {
-    delete val[];
+    delete []val;
 }
+//查找存在问题，待修改。
 template <typename T>
 int Array<T>::binarySearch(T target)
 {
@@ -83,6 +84,8 @@ using std::endl;
 int main()
 {
     int array[10];
+    cout<<"Input 10 int number."<<endl;
+
     for(int i = 0; i < 10;i++)
     {
         cin>>array[i];

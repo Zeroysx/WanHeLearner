@@ -41,7 +41,7 @@ Array<T>::Array(T value[])
 template <typename T>
 Array<T>::~Array()
 {
-    delete val[];
+    delete [] val;
 }
 
 template <typename T>
