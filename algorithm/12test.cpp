@@ -1,8 +1,7 @@
 /*
 12test.cpp测试程序
-最后修订时间：2024/2/26
+最后修订时间：2024/3/1
 作者：Wanhe
-未完成
 */
 template <typename T>
 class Array{
@@ -44,23 +43,33 @@ Array<T>::~Array()
 {
     delete []val;
 }
-//查找存在问题，待修改。
 template <typename T>
 int Array<T>::binarySearch(T target)
 {
-    int t = this->length/2;
-    while (t >= 0 && t < this->length)
+    // int t = this->length/2;
+    //查找区间
+    int interval[2];
+    if(this->val[length/2] == target)
+            return length/2;
+    else if(this->val[length/2] < target)
     {
-        if(this->val[t] == target)
-            return t;
-        else if(this->val[t] > target)
-        {
-            t = (t + length) / 2;
-        }
-        else
-        {
-            t = (t+1)/2 - 1;
-        }
+        interval[0] = length/2;
+        interval[1] = length;
+    }
+    else
+    {
+        interval[1] = length/2;
+        interval[0] = -1;
+    }
+    while (interval[0] != interval[1] && interval[0] >= -1 && interval[1] < length)
+    {
+        if(this->val[(interval[0]+interval[1])/2] == target)
+            return (interval[0]+interval[1])/2;
+            if (this->val[(interval[0]+interval[1])/2] > target)
+            {
+                interval[1] = (interval[0]+interval[1])/2;
+            }
+            else interval[0] = (interval[0]+interval[1])/2 ;
     }
     return -1;
     
@@ -83,14 +92,14 @@ using std::endl;
 //main函数
 int main()
 {
-    int array[10];
-    cout<<"Input 10 int number."<<endl;
+    int array[9];
+    cout<<"Input 9 int number."<<endl;
 
-    for(int i = 0; i < 10;i++)
+    for(int i = 0; i < 9;i++)
     {
         cin>>array[i];
     }
-    Array<int> arr(array,10);
+    Array<int> arr(array,9);
     cout<<"Input the value you want to search."<<endl;
     int t;
     cin>>t;

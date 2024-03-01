@@ -1,8 +1,8 @@
 /*
 动态内存分配
-最后修订时间L:2024/2/29
+最后修订时间L:2024/3/1
 作者:Wanhe
-未完成
+
 */
 //C风格分配内存引用库
 #include <malloc.h>
@@ -36,7 +36,7 @@ int main()
          cout<<str<<endl;
          free(str);
     }
-    else if(choice == "No" || choice == "no" || choice == "no")
+    else if(choice[0] == 'N' || choice[0] == 'n')
     {
         cout<<"You will exit with no space create."<<endl;//此类情况将不分配内存
     }
