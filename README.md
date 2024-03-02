@@ -7,5 +7,4 @@ WanHeLearner，是作者在学习过程中整理的一些自认为有利于诸�
 
 ## English  
 
-WanHeLearner,a series of codes which I think it will be helpful for computer learners.So I share them with you ,some of them are copied form other authors or platform,I hava annotated them.All of these code are not the best ,so 
-don't be harsh on me.I hope it will be helpful for your computer learning.
+WanHeLearner,a series of codes which I think it will be helpful for computer learners.So I share them with you ,some of them are copied form other authors or platform,I hava annotated them.All of these code are not the best ,so don't be harsh on me.I hope it will be helpful for your computer learning.

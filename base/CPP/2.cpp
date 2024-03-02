@@ -27,7 +27,7 @@ public:
     T showval();
     //改变val的值
     bool setval(T value);
-
+    int retnum(){return NumofClass;}
 };
 template <typename T>
 classdemo<T>::classdemo(/* args */)
@@ -56,4 +56,23 @@ classdemo<T>::classdemo(T value)
 {
     this->val = value;
     NumofClass++;
+}
+//最大对象存在数
+    const int MAXOBJ = 5; 
+
+//演示程序
+int main()
+{
+    classdemo<int>* interobj = new classdemo<int>(1);
+    classdemo<double>* floatobj = new classdemo<double>(2.00);
+    classdemo<char>* charobj =new classdemo<char>('w');
+
+    classdemo<int>* InterobjArr[3];
+    for(int i = 0;i < 3;i++)
+    {
+
+    }
+
+    
+    
 }
