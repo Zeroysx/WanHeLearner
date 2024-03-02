@@ -27,6 +27,7 @@ int main()
     str = new char[3];//C++风格动态内存分配
      cin>>str;
      cout<<str<<endl;
+     //释放内存
      delete [] str;
     }
     else if (choice == "C" ||choice == "c")
@@ -34,6 +35,7 @@ int main()
          str = (char *)malloc(10 * sizeof(char));//C风格动态内存分配
          cin>>str;
          cout<<str<<endl;
+         //释放内存
          free(str);
     }
     else if(choice[0] == 'N' || choice[0] == 'n')
