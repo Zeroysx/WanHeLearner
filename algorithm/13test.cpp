@@ -56,49 +56,47 @@ bool queueOut(queue& q,int &ret)
     }
 }
 
-/*链表实现队列*/
-template <typename T>
- class Queue
- {
- private:
-    typedef struct ListNode
+#include <iostream>
+
+using std::cout;
+using std::cin;
+using std::endl;
+
+int main()
+{
+    queue Q;
+    //输入要创建的杨辉三角的阶数
+    int i;
+    cin>>i;
+    //将第一层的1入队
+    queueIn(Q,1);
+    //逐层计算并输出
+    for(int j = 2,x = 0,t = 0 ; j <= i; j++)
     {
-        T val;
-        ListNode* next;
-    };
+        //每一层开头1入队
+        queueIn(Q,1);
+        //计算下一层的中间量及输出本层的中间量
+        for(int c = 1; c <= j - 2 ; c++)
+        {
 
-    //队首
-    ListNode* head;
-    //队尾
-    ListNode* last;
- public:
-    // Queue()
-    //构造函数
-    Queue();
-    //折构函数
-    ~Queue();
-    //入队函数
-    bool queueIn(T value);
-    //出队
-    bool queueOut(T& value);
-    //队列是否为空
-    bool isempty();
+            queueOut(Q,t);
+            cout<<t<<" ";
+            x = Q.array[Q.front];
+            t +=x;
+            queueIn(Q,t);
+        }
+        //每层末尾1入队
+    queueIn(Q,1);
+    //结尾输出
+    cout<<Q.array[Q.front];
+    int a;
+    queueOut(Q,a);
+    cout<<endl;
+    }
+    while (!isempty(Q))
+    {
+        queueOut(Q,i);
+        cout<<i<<" ";
+    }
     
- };
-
- template <typename T>
- Queue<T>::Queue(/* args */)
- {
-
-    head = new ListNode;
-    last = head;
-    head->val = 0;
-    head->next = nullptr;
-    
- }
-
- template <typename T>
- Queue<T>::~Queue()
- {
- }
- 
+}

@@ -16,7 +16,7 @@ public:
         random = NULL;
     }
 };
-/*最佳解决方案是使用哈希表构建映射，本方法未使用哈希表但是原理类似*/
+/*更优解决方案是使用哈希表构建映射，本方法未使用哈希表但是原理类似*/
 class Solution {
 public:
     Node* copyRandomList(Node* head) {
