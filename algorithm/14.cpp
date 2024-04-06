@@ -1,6 +1,6 @@
 /*
 题目:BF算法
-最后修订时间：2024/3/29
+最后修订时间：2024/4/6
 作者：Wanhe
 备注:Brute-Force算法也称简单匹配算法，采用穷举法查找目标字符串
 */
@@ -22,15 +22,25 @@ bool BruteForceSearch(char *str1,char *str2 ,int length1,int length2,int Pos)
     int tag = 0;
     for(int i = 0;i < length1;i++)
     {
-      for(int j = 0; j < length2 && tag == 1;j++)
+      for(int j = 0; j < length2 && tag == 0;j++)
       {
         if(*(p1 + j) !=*(p2 + j))
         {
-            
+            tag = 0;
+        }
+        else
+        {
+          tag = 1;
+          break;
         }
       }
-        
+      if(tag = 1)
+        p1++;
+      else{
+        return true;
+      } 
+
     }
-    
+    return false;
 }
 
