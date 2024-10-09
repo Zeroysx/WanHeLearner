@@ -17,92 +17,16 @@ const int INF = 2147483647;
 基本思路：
 将不同的弧按边权的大小从小到大排序，从小到大开始连接各个端点
 */
-// 用邻接表表示树
-typedef struct Node
-{
-    float weight;  // 边权
-    HeadNode *ptr; // 指向子节点的指针
-    Node *next;    // 指向下一个
-};
 
-typedef struct HeadNode
-{
-    char val;
-    Node *son;
-};
-typedef struct Triplets
-{
-    int x = -1;
-    int y = -1;
-    int weight = -1;
-    Triplets *next = nullptr;
-};
-
+/***********************************************************/
+                        /*算法说明*/
 /**
- * @brief Kruskal算法
- *
- * @param arr_val 图的节点的值的数组
- * @param n 图的总节点数
- * @param weight_list 权值表
- * @param ret 返回的最小生成树的首地址
- * @return true 构造成功
- * @return false 构造失败
+ * 生成树算法是用于解决在一个图中构建树（即不包含回路的连接）的算法。
+ * 首先我们需要认识到：一个完全图的生成树必然包含所有节点，非完全图则不然。因此算法结束的条件应包含两类：
+ * 1、所有节点均已加入树中。
+ * 2、生成树与图中剩余节点已无可用连接。
+ * 起点不同的情况下，同一张图的生成树可能不同。
+ * 可以用邻接表或邻接矩阵存储图的信息。
+ * C/C++风格邻接表和邻接矩阵的设计见base目录下的对应目录
  */
-bool kruskal(char arr_val[], int n, float *weight_list, HeadNode *ret)
-{
-    HeadNode head;
-    int visited[n] = {0};
-    // 遍历排序所有的边
-    int m, n;
-    int min = INF;
-    Triplets *head_tab = new Triplets;
-    Triplets *pNode = new Triplets;
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            if (weight_list[i * n + j] != -1)
-            {
-                if (head_tab->weight == -1)
-                {
-                    head_tab->x = j;
-                    head_tab->y = i;
-                    head_tab->weight = weight_list[i * n + j];
-                }
 
-                pNode->next = head_tab;
-                while (pNode->next->weight < weight_list[i * n + j])
-                {
-                    if(pNode->next == nullptr)
-                        break;
-                  pNode->next = pNode->next->next; 
-                }
-                 if (pNode->next == head_tab)
-                    {
-                        pNode->x = j;
-                        pNode->y = i;
-                        pNode->weight = weight_list[i * n + j];
-                        head_tab = pNode;
-                    }
-                    else if(pNode->next == nullptr)
-                    {
-                        pNode->next = new Triplets;
-                        pNode->next->x = j;
-                        pNode->next->y = i;
-                        pNode->weight = weight_list[i*n + j];
-                        
-                    }
-                    else
-                    {
-                    Triplets* node = new Triplets;
-                    node->x = j;
-                    node->y = i;
-                    node->weight = weight_list[i * n + j];
-                    node->next = pNode->next;
-                    pNode->next = node;
-                    }
-                    
-            }
-        }
-    }
-}
