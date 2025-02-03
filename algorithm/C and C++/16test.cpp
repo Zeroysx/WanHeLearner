@@ -1,10 +1,3 @@
-/*
-题目:最大子数组问题
-最后修订时间：2024/5/15
-作者:Wanhe
-备注:分治策略
-问题描述：一个含有含符号数的数组，求其中拥有最大和的最大子数组
-*/
 #include <vector>
 // 获取一个范围内跨越中点的最大子数组。
 std::vector<int> find_max_crossing_subarray(std::vector<int> A,int low,int mid,int high)
@@ -25,7 +18,7 @@ std::vector<int> find_max_crossing_subarray(std::vector<int> A,int low,int mid,i
     int right_sum = -1000000;
     sum = 0;
     int max_right_tag;
-    for(int i=mid;i <= high;i++ )
+    for(int i=mid+1;i <= high;i++ )
     {
         sum = sum + A[i];
         if (sum > right_sum)
@@ -62,11 +55,11 @@ std::vector<int> find_max_subarray(std::vector<int> A,int low,int high)
         std::vector<int> max_left_array = find_max_subarray(A,low,mid);
         std::vector<int> max_right_array = find_max_subarray(A,mid+1,high);
         std::vector<int> max_mid_array = find_max_crossing_subarray(A,low,mid,high);
-        if( max_left_array >= max_right_array && max_left_array >= max_mid_array)
+        if( max_left_array[2] >= max_right_array[2] && max_left_array[2] >= max_mid_array[2])
         {
             return max_left_array;
         }
-        else if (max_right_array >= max_left_array && max_right_array >= max_mid_array)
+        else if (max_right_array[2] >= max_left_array[2] && max_right_array[2] >= max_mid_array[2])
         {
             return max_right_array;
         }
@@ -75,4 +68,16 @@ std::vector<int> find_max_subarray(std::vector<int> A,int low,int high)
             return max_mid_array;
         }   
     }
+}
+#include <iostream>
+int main()
+{
+    std::vector<int> data;
+    data = {1,2,-3,4,5,-6,7};
+    std::vector<int> A = find_max_subarray(data,0,6);
+    for(int i : A)
+    {
+        std::cout<<i<<' ';
+    }
+    std::cout<<std::endl;
 }
