@@ -7,7 +7,7 @@
 #include <vector>
 using namespace std;
 //解1：双指针同端同向遍历
-
+//作者：Wanhe 
 class Solution {
 public:
     vector<int> trainingPlan(vector<int>& actions) {
@@ -29,7 +29,7 @@ public:
         return actions;
     }
 };
-//作者：Wanhe 
+
 //解2：双指针，两端反向遍历，LeetCode题解
 class Solution {
 public:
