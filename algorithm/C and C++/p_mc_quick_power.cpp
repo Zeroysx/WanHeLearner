@@ -8,7 +8,6 @@ using namespace std;
 该程序包含两种计算整数幂的算法：
 1. **quik_power**：使用二进制快速幂算法（按位运算）计算整数的幂，时间复杂度为O(logn)，是常用的高效算法。
 2. **mi**：采用传统的循环方式计算整数幂，时间复杂度为O(n)，在指数较大的情况下效率较低。
-程序通过两种不同方式计算3的45次方，并输出结果，展示了不同算法的效率差异。
 */
 
 long long int quik_power(long long int base, int power)
