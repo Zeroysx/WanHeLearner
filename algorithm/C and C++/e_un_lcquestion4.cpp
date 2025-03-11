@@ -1,5 +1,5 @@
 /*
-求连续正整数和等于指定数字的所有解
+题目：求连续正整数和等于指定数字的所有解
 题目来源:leetCode
 最后修订日期:2024/2/15
 */
@@ -8,6 +8,7 @@
 using namespace std;
 
 //解1
+// 作者：Wanhe
 //双循环遍历逐个求和
 class Solution {
 public:
@@ -34,7 +35,7 @@ public:
         return ret;
     }
 };
-// 作者：Wanhe
+
 
 //解2:求解求和连续数的左右边界
 /*解析
