@@ -1,19 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-long long int quick_mi(long long int m, int power)
-{
-    long long int result = 1;
-    while(power > 0)
-    {
-        if(power & 1)
-        {
-            result = result * m;
-        }
-        m = m * m;
-        power >>= 1;
-    }
-    return result;
-}
 long long int quik_power(long long int base, int power)
 {
     long long int result = 1;   //用于存储项累乘与返回最终结果，由于要存储累乘所以要初始化为1
@@ -41,9 +27,7 @@ long long int mi(long long int base, int power)
 }
 int main()
 {
-    long long int result = quick_mi(3, 45);
-    cout << result << endl;
     cout << quik_power(3 , 45) << endl;
     cout << mi(3, 45) << endl;
-    return 0
+    return 0;
 }
