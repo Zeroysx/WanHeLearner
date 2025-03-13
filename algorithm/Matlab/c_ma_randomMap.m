@@ -1,6 +1,9 @@
-function [ret] = randomMap(size,maxWeight,CP)
-    %RANDOMMAP 生成随机无向图
-    
+function [ret] = c_ma_randomMap(size,maxWeight,CP)
+ %c_ma_randomMap 生成随机无向图
+%{
+最后修订时间：2025/3/13
+作者:WanHe
+%}
     %{
     输入：
     size:图的节点数
