@@ -5,6 +5,7 @@
 + [概述](#abstract)
 + [文件命名规范](#filenameRule)
 + [文件头规范](#fileheadRule)
++ [关于文档编写](#guidanceEdit)
 
 <a id="abstract"></a>
 
@@ -74,3 +75,9 @@ unique等级的程序的难度并没有一个确切的范围， 其主要评判�
 此算法需要用到10.cpp中的算法
 */
 ```
+
+<a id="guidanceEdit"></a>
+
+### 关于文档编写
+
+在编写完程序后，请在文件所在的同级目录的readme文件中添加关于本程序的相关内容。

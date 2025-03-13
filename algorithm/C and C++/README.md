@@ -6,7 +6,7 @@
 
 ## 目录/Directory
 
-* 1.cpp:求两个链表的首个重合节点
+* [c_dp_maxSubArray.cpp 最大子数组问题](./c_dp_maxSubArray.cpp)
 * 2.cpp:复制含有指向链表随机位置的指针
 * 3.cpp:使有一个数组的所有奇数在所有偶数前面
 * 4.cpp:求连续正整数和等于指定数字的所有解
