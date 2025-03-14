@@ -6,34 +6,35 @@
 
 ## 目录/Directory
 
-* 1.cpp:求两个链表的首个重合节点
-* 2.cpp:复制含有指向链表随机位置的指针
-* 3.cpp:使有一个数组的所有奇数在所有偶数前面
-* 4.cpp:求连续正整数和等于指定数字的所有解
-* 5.cpp:求数组A排除第i个数的乘积，得到数组B
-* 6.cpp:寻找数组内存在相同相同值的任意值
-* 7.cpp:插入排序算法
-* 7test.cpp:插入排序算法测试程序（与7.cpp对应）
-* 8.cpp:选择排序算法
-* 8test.cpp:选择排序算法测试程序（与8.cpp对应）
-* 9.cpp:冒泡排序算法
-* 9test.cpp:冒泡排序算法测试程序（与9.cpp对应）
-* 10.cpp:归并算法
-* 10test.cpp:归并算法测试程序（与10.cpp对应）
-* 11.cpp:归并排序算法
-* 11test.cpp归并排序算法测试程序（与11.cpp对应）
-* 12.cpp:二分查找算法
-* 12test.cpp:二分查找测试程序
-* 13.cpp队列
-* 13test.cpp:队列求杨辉三角
-* 14.cpp:BF算法
-* 14test.cpp:14.cppBF算法测试程序
-* 15.cpp生成树算法(未完成)
-* 16.cpp最大子数组问题
-* 17.cpp输出数的2的幂次方表示形式
-* 18.cpp最短路径问题
-* 21.cpp计算鸡蛋在几层碎
-* 22.cpp矩阵乘法的Strassen算法
+* [c_dp_maxSubArray.cpp 最大子数组问题](./c_dp_maxSubArray.cpp)
+* [c_dp_maxSubArrayt.cpp 最大子数组问题测试程序](./c_dp_maxSubArrayt.cpp)
+* [c_ds_lcquestion2.cpp 力扣题目：复制含有指向链表随机位置的指针](./c_ds_lcquestion2.cpp)
+* [c_ma_createTreet.cpp 生成树算法（未完成）](./c_ma_createTreet.cpp)
+* [c_ma_PascalTriangle.cpp 杨辉三角](./c_ma_PascalTriangle.cpp)
+* [c_ma_PascalTrianglet.cpp 杨辉三角测试程序](./c_ma_PascalTrianglet.cpp)
+* [c_ma_strassent.cpp 矩阵乘法的Strassent算法](./c_ma_strassent.cpp)
+* [c_so_merge.cpp 归并算法](./c_so_merge.cpp)
+* [c_so_mergeSort.cpp 归并排序](./c_so_mergeSort.cpp)
+* [c_so_mergeSortt.cpp 归并排序测试程序](./c_so_mergeSortt.cpp)
+* [c_so_merget.cpp 归并算法测试程序](./c_so_merget.cpp)
+* [c_un_numberofPairst.cpp 力扣题目：优质数对](./c_un_numberofPairst.cpp)
+* [e_ba_binarySearch.cpp 二分查找](./e_ba_binarySearch.cpp)
+* [e_ba_binarySearcht.cpp 二分查找测试程序](./)
+* [e_ba_lcquestion5.cpp 力扣题目：求数组排除第i个数的乘积](./e_ba_lcquestion5.cpp)
+* [e_ba_lcquestion6.cpp 力扣题目：寻找数组内存在相同值的任意值](./e_ba_lcquestion6.cpp)
+* [e_ba_question1.cpp 题目：求数的2的幂次方表示](./e_ba_question1.cpp)
+* [e_se_BFSearch.cpp BF强制匹配](./e_se_BFSearch.cpp)
+* [e_se_BFsearcht.cpp BF强制匹配测试程序](./e_se_BFsearcht.cpp)
+* [e_so_bubbleSort.cpp 冒泡排序](./e_so_bubbleSort.cpp)
+* [e_so_bubbleSortt.cpp 冒泡排序测试程序](./e_so_bubbleSortt.cpp)
+* [e_so_insertionSort.cpp 插入排序](./e_so_insertionSort.cpp)
+* [e_so_insertionSortt.cpp 插入排序测试程序](./e_so_insertionSortt.cpp)
+* [e_so_lcquestion3.cpp 力扣题目：使一个数组的所有奇数在偶数之前](./e_so_lcquestion3.cpp)
+* [e_so_selectSort.cpp 选择排序](./e_so_selectSort.cpp)
+* [e_so_selectSortt.cpp 选择排序测试程序](./e_so_selectSortt.cpp)
+* [e_un__lcquestion1.cpp 力扣题目：求两个链表的首个重合节点](./e_un__lcquestion1.cpp)
+* [p_mc_fibonacci.cpp.cpp 求斐波那契数列的第n项](./p_mc_fibonacci.cpp.cpp)
+* [p_mc_quick_power.cpp 计算整数的快速幂和传统幂](./p_mc_quick_power.cpp)
   
 ## 参考资料
 
