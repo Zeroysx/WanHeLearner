@@ -38,6 +38,35 @@ public:
 // 来源：力扣（LeetCode）
 // 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
     /*思路2：双循环遍历链表找到第一个相同节点,此处略*/
+//思路3：将长链表多出的部分去掉，再一起遍历链表
+    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+        ListNode *A = headA;
+        ListNode *B = headB;
+        int asize = 0;
+        int bsize = 0;
+        while(A->next != nullptr)
+        {
+            asize++;
+            A = A->next;
+        }
+        while(B->next != nullptr)
+        {
+            bsize++;
+            B = B->next;
+        }
+        if(A != B)
+        return nullptr;
+        int length = asize > bsize ? asize - bsize : bsize - asize;// 多余部分
+        ListNode *longList = asize >= bsize ? headA : headB;
+        ListNode *shortList = asize < bsize ? headA : headB;
+        while(length-- > 0)
+        longList = longList->next;
+        while (longList != shortList){
+            longList = longList->next;
+            shortList = shortList->next;
+        }
+        return longList;
+    }
 };
 
 
