@@ -40,7 +40,14 @@ long long int mi(long long int base, int power)
 
 int main()
 {
-    cout << quik_power(3 , 45) << endl;
-    cout << mi(3, 45) << endl;
+    // 输入要计算的底数和指数
+    cout << "Enter base and exponent:" << endl;
+    long long int base;
+    int power;
+    cin >> base >> power;
+    // 使用快速幂计算
+    cout << "Result of quick power: " << quik_power(base, power) << endl;
+    // 使用传统幂计算
+    cout << "Result of traditional power: " << mi(base, power) << endl;
     return 0;
 }

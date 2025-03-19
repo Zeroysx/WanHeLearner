@@ -3,7 +3,7 @@ using namespace std;
 
 /*
 题目：斐波那契数列的第n项计算（矩阵快速幂）
-程序最后修订时间：2025年3月12日
+程序最后修订时间：2025年3月19日
 作者：whsialcx
 问题描述/备注：
 该程序通过矩阵快速幂的方式计算斐波那契数列的第n项，时间复杂度为O(logn)。
@@ -59,10 +59,12 @@ int fibonacci(int n)
     return res[0][0] + res[1][0];
 }
 
-int main() 
-{
-    int n = 5;
-    cout << fibonacci(n) << endl;
-    cin.get();
+int main() {
+    // 输入要计算的斐波那契数列的项数
+    cout << "Input the position (n) of Fibonacci sequence: " << endl;
+    int n;
+    cin >> n;
+    // 输出斐波那契数列的第n项
+    cout << "Fibonacci number at position " << n << " is: " << fibonacci(n) << endl;
     return 0;
 }
