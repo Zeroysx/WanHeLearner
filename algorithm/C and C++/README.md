@@ -36,6 +36,7 @@
 * [p_mc_fibonaccit.cpp 求斐波那契数列的第n项测试程序](./p_mc_fibonaccit.cpp)
 * [p_mc_quick_powert.cpp 计算整数的快速幂和传统幂测试程序](./p_mc_quick_powert.cpp)
 * [p_dp_partition_increasingt.cpp 将一个正整数分裂成若干递增数的组合数测试程序](./p_dp_partition_increasingt.cpp)
+* [c_so_bucketsortt.cpp 桶排测试程序](./c_so_bucketsortt.cpp)
   
 ## 参考资料
 
