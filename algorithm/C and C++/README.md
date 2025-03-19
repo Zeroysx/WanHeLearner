@@ -33,8 +33,8 @@
 * [e_so_selectSort.cpp 选择排序](./e_so_selectSort.cpp)
 * [e_so_selectSortt.cpp 选择排序测试程序](./e_so_selectSortt.cpp)
 * [e_un__lcquestion1.cpp 力扣题目：求两个链表的首个重合节点](./e_un__lcquestion1.cpp)
-* [p_mc_fibonacci.cpp.cpp 求斐波那契数列的第n项测试程序](./p_mc_fibonaccit.cpp)
-* [p_mc_quick_power.cpp 计算整数的快速幂和传统幂测试程序](./p_mc_quick_powert.cpp)
+* [p_mc_fibonaccit.cpp 求斐波那契数列的第n项测试程序](./p_mc_fibonaccit.cpp)
+* [p_mc_quick_powert.cpp 计算整数的快速幂和传统幂测试程序](./p_mc_quick_powert.cpp)
   
 ## 参考资料
 
