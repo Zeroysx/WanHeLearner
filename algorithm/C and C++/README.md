@@ -37,6 +37,7 @@
 * [p_mc_quick_powert.cpp 计算整数的快速幂和传统幂测试程序](./p_mc_quick_powert.cpp)
 * [p_dp_partition_increasingt.cpp 将一个正整数分裂成若干递增数的组合数测试程序](./p_dp_partition_increasingt.cpp)
 * [c_so_bucketsortt.cpp 桶排测试程序](./c_so_bucketsortt.cpp)
+* [p_ds_perfectshufflet.cpp 完美洗牌测试程序](./p_ds_perfectshufflet.cpp)
   
 ## 参考资料
 
