@@ -13,6 +13,7 @@ private:
     int rows;//矩阵的行数
     // int cols;//矩阵的列数
     int* data;//矩阵空间
+    Matrix Strassen(Matrix m1,Matrix m2);
 public:
     Matrix(/* args */);
     ~Matrix();
@@ -54,8 +55,10 @@ void Matrix::setrows(int n)
     //复制矩阵到新空间
     //?问题：如何对矩阵的复制进行优化
     //*使用realloc在原地分配内存可以节约复制的开支
-    data = (int*)realloc(data,n*n);
-    delete [] data;
+    // data = (int*)realloc(data,n*n);
+    data = new(data) int[n];//原地重新分配内存
+    
+    // delete [] data;
 }
 
 Matrix Matrix::operator=(Matrix m)
@@ -80,6 +83,12 @@ Matrix Matrix::operator=(Matrix m)
     return *this;
 }
 
+/**
+ * @brief 将使用数组矩阵赋值
+ * 
+ * @param arr 
+ * @return Matrix 
+ */
 Matrix Matrix::operator=(const int arr[])
 {
     
@@ -90,19 +99,38 @@ int* Matrix::operator[](const unsigned n)
     return &data[n*rows];
 }
 
-// Matrix operator*(const Matrix m)
-// {
+/**
+ * @brief 矩阵的乘法
+ * 
+ * @param m1 
+ * @return Matrix 
+ * @note 在本案例中，为Strassen算法
+ * @author WanHe
+ */
+Matrix operator*(const Matrix m1)
+{
+//
 
-// }
-
+}
+#define ERROR_ADD 1234
 Matrix Matrix::operator+(const Matrix m1)
 {
     Matrix ret;
     //只有同型矩阵才能进行加减法。
     if(this->rows != m1.rows)
     {
-        
+        ret.setrows(this->rows);
+        for(int i = 0; i < this->rows;i++)
+            for(int j = 0;j < this->rows;j++)
+            {
+                ret[i][j] = this->data[i*this->rows + j] + m1.data[i*m1.rows+j];
+            }
     }
+    else//对于不同型矩阵相加，抛出错误
+    {
+        throw ERROR_ADD;
+    }
+    return ret;
 }
 
 //test
