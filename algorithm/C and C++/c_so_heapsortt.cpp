@@ -34,7 +34,7 @@ void heapify(vector<T> &arr, int i, int light)
         } 
         swap(arr[la], arr[i]);
         i = la;
-        left = la * 2 + 1;
+        left = i * 2 + 1;
     }
 }
 
