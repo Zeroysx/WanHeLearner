@@ -42,6 +42,8 @@
 * [c_so_heapsortt.cpp堆排测试程序](./c_so_heapsortt.cpp)
 * [e_so_radixsort.cpp基数排序测试程序](./e_so_radixsort.cpp)
 * [p_ds_multiLinkedListLFU.cpp LFU缓存算法](./p_ds_multiLinkedListLFU.cpp)
+* [e_se_BMmatching.cpp BF匹配算法](./e_se_BMmatching.cpp)
+  
 ## 参考资料
 
 * 1、《算法导论》机械工业出版社第三版 ISBN 978-7-111-40701-0 （美） Thomas H.Cormen / Charles E.Leiserson 著 殷建平 徐云 王刚 刘晓光 苏明 邹永明 王宏志 译
