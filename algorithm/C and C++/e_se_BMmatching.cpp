@@ -21,6 +21,13 @@ int main()
     cin.get();
     std::getline(cin,str);
 
+    //全部转化为小写
+    for(int i = 0; i < tar.length();i++)
+        if(tar[i]<='Z' && tar[i] >= 'A')
+            tar[i] = tar[i] + 32;
+    for(int i =0 ; i < str.length();i++)
+        if(str[i]<='Z' && str[i] >= 'A')
+            str[i] = str[i] + 32;
     int size = tar.length();
     for(int i =0;i < str.length();i++)
     {
@@ -31,23 +38,13 @@ int main()
                 cout<<"-1";
                 return 0;
             }
+            if(str[i] != tar[0])
+                break;
             if(str[i+ size - j ] != tar[size-j])
             {
-                //大小写匹配
-                if(str[i+size - j] < 123 && str[i+size - j] >96)
-                {    
-                    if(str[i+size - j] -32 != tar[size -j])
-                        break;
-                }
-                else if(str[i+size-j] <90 && str[i+size - j] > 64)
-                {
-                    if(str[i+size - j] +32 != tar[size - j])
-                        break;
-                }
-                else break;    
+                break;    
             }
-            if(j == size  && (str[i] == tar[0] 
-            || str[i] == tar[0] + 32 || str[i] == tar[0] - 32))
+            if(j == size  && str[i] == tar[0] )
             {
                 if(i == 0 ||(str[i - 1] == ' ' && (str[i + size] == ' ' || i+size > str.length())))
                 {
@@ -55,7 +52,6 @@ int main()
                     if( i < first)
                         first = i;
                 }
-                
             }
                 
         }
