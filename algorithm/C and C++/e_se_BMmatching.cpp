@@ -52,8 +52,7 @@ int main()
                     if( i < first)
                         first = i;
                 }
-            }
-                
+            }          
         }
     }
     cout<<count<<" "<<first;

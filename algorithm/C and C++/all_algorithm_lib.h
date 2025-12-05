@@ -110,8 +110,20 @@ void mergeSort2(T* p,T* r)
 }
 
 }
-
-
+/*** 计算斐波那契数列的第n项
+ * @param n 斐波那契数列的项数
+ * @return 第n项的值
+ * @note 该函数使用递归方法计算斐波那契数列，时间复杂度较高，适用于较小的n值。
+ */
+int Fibonacci(int n)
+{
+    if(n == 0)
+        return 0;
+    else if (n == 1)
+        return 1;
+    else
+        return Fibonacci(n-1) + Fibonacci(n-2);
+}
 
 
 #endif
