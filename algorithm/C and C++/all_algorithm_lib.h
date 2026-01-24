@@ -125,5 +125,188 @@ int Fibonacci(int n)
         return Fibonacci(n-1) + Fibonacci(n-2);
 }
 
+//图的基本实现
 
+/**
+ * @brief 图的邻接矩阵表示
+ * @tparam T 图中顶点的数据类型
+ */
+template <typename T>
+class GraphMatrix
+{
+    private:
+        int maxVertices; //最大顶点数
+        int numVertices; //当前顶点数
+        int numEdges;    //当前边数
+        T* vertices;     //顶点数组
+        int** adjMatrix; //邻接矩阵
+    public:
+        //构造函数
+        GraphMatrix(int maxV);
+        //折构函数
+        ~GraphMatrix();
+        //添加顶点
+        void addVertex(T vertex);
+        //添加边
+        void addEdge(int src, int dest, int weight = 1);
+        //打印邻接矩阵
+        void printMatrix();
+};
+template <typename T>
+GraphMatrix<T>::GraphMatrix(int maxV)
+{
+    maxVertices = maxV;
+    numVertices = 0;
+    numEdges = 0;
+    vertices = new T[maxVertices];
+    adjMatrix = new int*[maxVertices];
+    for(int i = 0; i < maxVertices; i++)
+    {
+        adjMatrix[i] = new int[maxVertices];
+        for(int j = 0; j < maxVertices; j++)
+        {
+            adjMatrix[i][j] = 0; //初始化为无边
+        }
+    }
+}
+template <typename T>
+GraphMatrix<T>::~GraphMatrix()
+{
+    delete[] vertices;
+    for(int i = 0; i < maxVertices; i++)
+    {
+        delete[] adjMatrix[i];
+    }
+    delete[] adjMatrix;
+}
+template <typename T>
+void GraphMatrix<T>::addVertex(T vertex)
+{
+    if(numVertices < maxVertices)
+    {
+        vertices[numVertices++] = vertex;
+    }
+}
+
+template <typename T>
+void GraphMatrix<T>::addEdge(int src, int dest, int weight)
+{
+    if(src >= 0 && src < numVertices && dest >= 0 && dest < numVertices)
+    {
+        adjMatrix[src][dest] = weight;
+        adjMatrix[dest][src] = weight; //无向图
+        numEdges++;
+    }
+}
+
+template <typename T>
+void GraphMatrix<T>::printMatrix()
+{
+    for(int i = 0; i < numVertices; i++)
+    {
+        for(int j = 0; j < numVertices; j++)
+        {
+            cout << adjMatrix[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+/** @brief 图的邻接表表示
+ * @tparam T 图中顶点的数据类型
+ */
+template <typename T>
+class GraphList
+{
+    private:
+        struct Node
+        {
+            int dest;
+            int weight;
+            Node* next;
+        };
+        struct Vertex
+        {
+            T data;
+            Node* head;
+        };
+        int maxVertices;
+        int numVertices;
+        int numEdges;
+        Vertex* vertices;
+    public:
+        GraphList(int maxV);
+        ~GraphList();
+        void addVertex(T vertex);
+        void addEdge(int src, int dest, int weight = 1);
+        void printList();
+};
+
+template <typename T>
+GraphList<T>::GraphList(int maxV)
+{
+    maxVertices = maxV;
+    numVertices = 0;
+    numEdges = 0;
+    vertices = new Vertex[maxVertices];
+    for(int i = 0; i < maxVertices; i++)
+    {
+        vertices[i].head = nullptr;
+    }
+}
+
+template <typename T>
+GraphList<T>::~GraphList()
+{
+    for(int i = 0; i < numVertices; i++)
+    {
+        Node* current = vertices[i].head;
+        while(current)
+        {
+            Node* temp = current;
+            current = current->next;
+            delete temp;
+        }
+    }
+    delete[] vertices;
+}
+
+template <typename T>
+void GraphList<T>::addVertex(T vertex)
+{
+    if(numVertices < maxVertices)
+    {
+        vertices[numVertices++].data = vertex;
+    }
+}
+
+template <typename T>
+void GraphList<T>::addEdge(int src, int dest, int weight)
+{
+    if(src >= 0 && src < numVertices && dest >= 0 && dest < numVertices)
+    {
+        Node* newNode = new Node{dest, weight, vertices[src].head};
+        vertices[src].head = newNode;
+        //无向图
+        newNode = new Node{src, weight, vertices[dest].head};
+        vertices[dest].head = newNode;
+        numEdges++;
+    }
+}
+
+template <typename T>
+void GraphList<T>::printList()
+{
+    for(int i = 0; i < numVertices; i++)
+    {
+        cout << vertices[i].data << ": ";
+        Node* current = vertices[i].head;
+        while(current)
+        {
+            cout << "-> (" << current->dest << ", " << current->weight << ") ";
+            current = current->next;
+        }
+        cout << endl;
+    }
+}
 #endif
