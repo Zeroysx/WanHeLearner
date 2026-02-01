@@ -1,5 +1,6 @@
 #ifndef WANHE_LIB
 #define WANHE_LIB
+#include <iostream>
 //本库集中了本代码仓中适合复用的代码以供使用
 namespace wanhe
 {
@@ -19,8 +20,8 @@ const int FLAG=2147483647;
 *@param p3 指向第二个有序部分的结尾的指针
 *@note 该函数三个指针需指向同一个数组。
 */
-//结尾标识常量,取极大值
-const int FLAG=2147483647;
+// //结尾标识常量,取极大值
+// const int FLAG=2147483647;
 //归并算法
 template <typename T>
 void merge(T *p1,T *p2 ,T *p3)
@@ -151,6 +152,13 @@ class GraphMatrix
         void addEdge(int src, int dest, int weight = 1);
         //打印邻接矩阵
         void printMatrix();
+        //获取顶点数量
+        int getVertexCount() { return numVertices; }
+        //获取顶点数据
+        T getVertex(int index) { return vertices[index]; }
+        //判断两个顶点之间是否有边
+        bool isEdge(int src, int dest) { return adjMatrix[src][dest] != 0; }
+
 };
 template <typename T>
 GraphMatrix<T>::GraphMatrix(int maxV)
@@ -206,9 +214,9 @@ void GraphMatrix<T>::printMatrix()
     {
         for(int j = 0; j < numVertices; j++)
         {
-            cout << adjMatrix[i][j] << " ";
+            std::cout << adjMatrix[i][j] << " ";
         }
-        cout << endl;
+        std::cout << std::endl;
     }
 }
 
@@ -299,14 +307,14 @@ void GraphList<T>::printList()
 {
     for(int i = 0; i < numVertices; i++)
     {
-        cout << vertices[i].data << ": ";
+        std::cout << vertices[i].data << ": ";
         Node* current = vertices[i].head;
         while(current)
         {
-            cout << "-> (" << current->dest << ", " << current->weight << ") ";
+            std::cout << "-> (" << current->dest << ", " << current->weight << ") ";
             current = current->next;
         }
-        cout << endl;
+        std::cout << std::endl;
     }
 }
 #endif

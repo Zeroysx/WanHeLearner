@@ -44,6 +44,9 @@
 * [p_ds_multiLinkedListLFU.cpp LFU缓存算法](./p_ds_multiLinkedListLFU.cpp)
 * [c_ds_unionfind.cpp 并查集结构](./c_ds_unionfind.cpp)
 * [e_ma_BreadthFirstSearch.cpp 图的广度优先搜索](./e_ma_BreadthFirstSearch.cpp)
+* [e_ma_Prim.cpp Prim算法](./e_ma_Prim.cpp)
+* [e_ma_Kruskal Kruskal算法](./e_ma_Kruskal.cpp)
+* [e_ma_Dijkstra Dijkstra算法](./e_ma_Dijkstra.cpp)
 
 ## 参考资料
 
