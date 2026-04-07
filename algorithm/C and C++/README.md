@@ -47,6 +47,7 @@
 * [e_ma_Prim.cpp Prim算法](./e_ma_Prim.cpp)
 * [e_ma_Kruskal Kruskal算法](./e_ma_Kruskal.cpp)
 * [e_ma_Dijkstra Dijkstra算法](./e_ma_Dijkstra.cpp)
+* [e_ds_isPalindrome 判断是否为回文链表](./e_ds_isPalindrome.cpp)
 
 ## 参考资料
 
